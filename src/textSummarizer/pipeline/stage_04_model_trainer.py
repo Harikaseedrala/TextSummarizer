@@ -8,7 +8,16 @@ class ModelTrainerTrainingPipeline:
         pass
 
     def main(self):
-        config = ConfigurationManager()
+        '''config = ConfigurationManager()
         model_trainer_config = config.get_model_trainer_config()
         model_trainer_config = ModelTrainer(config=model_trainer_config)
-        model_trainer_config.train()
+        model_trainer_config.train()'''
+        config = ConfigurationManager()
+        model_trainer_config = config.get_model_trainer_config()
+        # Instantiate ModelTrainer
+        model_trainer = ModelTrainer(config=model_trainer_config)
+        # Start Training (with checkpointing)
+        model_trainer.train()
+
+
+        
